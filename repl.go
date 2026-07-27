@@ -18,7 +18,7 @@ func startRepl() {
 		input := scanner.Text()
 		command, exists := getCommands()[strings.ToLower(input)]
 		if exists {
-			err := command.callback()
+			err := command.callback(&locationAreaURL)
 			if err != nil {
 				fmt.Println(err)
 			}
